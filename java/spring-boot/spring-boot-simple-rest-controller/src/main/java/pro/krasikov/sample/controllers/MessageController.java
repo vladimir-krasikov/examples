@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(produces = MediaType.TEXT_PLAIN_VALUE)
+@RequestMapping(value = "/", produces = MediaType.TEXT_PLAIN_VALUE)
 public class MessageController {
 
     @Autowired
