@@ -65,6 +65,7 @@ public class TaskControllerTest {
                         .param("size", String.valueOf(size)))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(applicationJsonUtf8))
+                .andExpect(jsonPath("totalPages", is(1)))
                 .andExpect(jsonPath("numberOfElements", is(tasks.size())))
                 .andExpect(jsonPath("$.content.[0].name", is(tasks.get(0).getName())))
                 .andExpect(jsonPath("$.content.[0].description", is(tasks.get(0).getDescription())))
