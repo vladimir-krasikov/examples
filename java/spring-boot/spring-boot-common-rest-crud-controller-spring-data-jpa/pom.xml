@@ -6,7 +6,7 @@
 
     <groupId>pro.krasikov</groupId>
     <artifactId>spring-boot-common-rest-crud-controller-spring-data-jpa</artifactId>
-    <version>{application.version}</version>
+    <version>${application.version}</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
