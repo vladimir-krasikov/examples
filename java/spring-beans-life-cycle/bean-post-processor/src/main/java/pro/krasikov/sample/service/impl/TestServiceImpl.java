@@ -21,5 +21,6 @@ public class TestServiceImpl implements TestService {
     @Override
     public void doWork(String text) {
         System.out.format("in doWork( %s ) method", text);
+        System.out.println();
     }
 }
