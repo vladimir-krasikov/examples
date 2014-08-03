@@ -1,0 +1,125 @@
+Showcase of spring-data-rest and spring-data-jpa.
+
+Request URL:http://localhost:8080/api/
+Request Method:GET
+Status Code:200 OK
+
+Response:
+{
+  "_links" : {
+    "task" : {
+      "href" : "http://localhost:8080/api/task{?page,size,sort}",
+      "templated" : true
+    }
+  }
+}
+
+Request URL:http://localhost:8080/api/task
+Request Method:GET
+Status Code:200 OK
+
+Response:
+{
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/api/task{?page,size,sort}",
+      "templated" : true
+    },
+    "search" : {
+      "href" : "http://localhost:8080/api/task/search"
+    }
+  },
+  "_embedded" : {
+    "task" : [ {
+      "name" : "task2",
+      "description" : null,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/api/task/1"
+        }
+      }
+    }, {
+      "name" : "task3",
+      "description" : null,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/api/task/2"
+        }
+      }
+    }, {
+      "name" : "task1",
+      "description" : null,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/api/task/3"
+        }
+      }
+    } ]
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 3,
+    "totalPages" : 1,
+    "number" : 0
+  }
+}
+
+Request URL:http://localhost:8080/api/task/1
+Request Method:GET
+Status Code:200 OK
+
+Response:
+{
+  "name" : "task2",
+  "description" : null,
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/api/task/1"
+    }
+  }
+}
+
+Request URL:http://localhost:8080/api/task/search
+Request Method:GET
+Status Code:200 OK
+
+Response:
+{
+  "_links" : {
+    "findByNameContaining" : {
+      "href" : "http://localhost:8080/api/task/search/findByNameContaining{?text,page,size,sort}",
+      "templated" : true
+    }
+  }
+}
+
+Request URL:http://localhost:8080/api/task/search/findByNameContaining?text=1
+Request Method:GET
+Status Code:200 OK
+
+Response:
+{
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/api/task/search/findByNameContaining?text=1{&page,size,sort}",
+      "templated" : true
+    }
+  },
+  "_embedded" : {
+    "task" : [ {
+      "name" : "task1",
+      "description" : null,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/api/task/3"
+        }
+      }
+    } ]
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 1,
+    "totalPages" : 1,
+    "number" : 0
+  }
+}
